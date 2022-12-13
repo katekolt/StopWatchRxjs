@@ -1,0 +1,31 @@
+.container {
+  text-align: center;
+  font-family: Lato;
+  margin: 15px;
+  span {
+    color: grey;
+    font-size: 18px;
+  }
+}
+.timer-counter-label {
+  align-items: center;
+  font-size: 27px;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  background: #007bff;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px;
+  margin: 5px 10px;
+  min-width: 100px;
+  &:hover {
+    cursor: pointer;
+    background: #0069d9;
+    border: 1px solid #0062cc;
+  }
+}
