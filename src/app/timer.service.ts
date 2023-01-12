@@ -6,6 +6,7 @@ import {
   Subscription
 } from "rxjs";
 import { map } from "rxjs/operators";
+
 import { StopWatch } from "./stop-watch.interface";
 
 @Injectable({
@@ -34,7 +35,10 @@ export class TimeService {
     if (this.isRunning) {
       return;
     }
-    this.timerSubscription = timer(0, 100).pipe(map((value: number): number => value + this.lastStoppedTime)).subscribe(this.timer$);
+    this.timerSubscription = timer(0, 100)
+      .pipe(
+        map((value: number): number => value + this.lastStoppedTime))
+      .subscribe(this.timer$);
     this.isRunning = true;
   }
 
@@ -60,12 +64,12 @@ export class TimeService {
     const minutes = Math.floor(rest / 600);
 
     return {
-      minutes: this.convertToNumberString(minutes),
-      seconds: this.convertToNumberString(seconds),
+      minutes: this.convertNumberToString(minutes),
+      seconds: this.convertNumberToString(seconds),
     };
   }
 
-  private convertToNumberString(value: number): string {
+  private convertNumberToString(value: number): string {
     return `${value < 10 ? "0" + value : value}`;
   }
 }

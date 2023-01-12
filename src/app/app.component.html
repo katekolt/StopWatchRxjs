@@ -2,6 +2,7 @@
   <section class="timer-counter-label">
   {{stopwatch.minutes}} <span>m</span>  {{stopwatch.seconds}} <span>s</span>
     </section>
+  <button (click) ="wellDone()">Fire</button>
 <button (click)="startCount()" *ngIf="startBtn">Start</button>
 <div *ngIf="!startBtn">
   <button (click)="stopTimer()">Stop</button>
